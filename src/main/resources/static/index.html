@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hi</title>
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript">
+        function hi() {
+            $.ajax({
+                type:"GET",
+                url:"/say",
+                data:{name:"liupei",age:"12",person:"zhangsan"},
+                success:function (ret) {
+                    console.log("调用ajax成功！"+ret)
+                },
+                error:function (ret) {
+                    console.log("调用ajax失败！")
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+<button onclick="hi()">问好</button>
+</body>
+</html>
